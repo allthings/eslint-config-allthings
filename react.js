@@ -1,12 +1,10 @@
 module.export = {
-  globals: {},
   extends: [
     '@allthings/default',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
   ],
   plugins: ['react-hooks'],
-
   rules: {
     'react-hooks/exhaustive-deps': 'error',
     'react/jsx-curly-brace-presence': [
@@ -22,10 +20,5 @@ module.export = {
         noSortAlphabetically: false,
       },
     ],
-  },
-  settings: {
-    react: {
-      version: 'detect', // Tells eslint-plugin-react to automatically detect the version of React to use
-    },
   },
 }

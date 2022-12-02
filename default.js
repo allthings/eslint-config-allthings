@@ -1,15 +1,4 @@
 module.export = {
-  parser: '@typescript-eslint/parser',
-  // Specifies the ESLint parser
-  parserOptions: {
-    // Allows for the use of imports
-    ecmaFeatures: {
-      jsx: true, // Allows for the parsing of JSX
-    },
-    ecmaVersion: 2020,
-    // Allows for the parsing of modern ECMAScript features
-    sourceType: 'module',
-  },
   extends: [
     'plugin:prettier/recommended',
     'plugin:import/recommended',
