@@ -1,7 +1,6 @@
 {
   "name": "@allthings/eslint-config",
   "version": "0.0.1",
-  "private": true,
   "description": "ESlint shareable config for Allthings style",
   "main": "index.js",
   "files": [
@@ -11,10 +10,11 @@
     "react.js"
   ],
   "scripts": {
-    "lint": "prettier",
+    "lint": "prettier --write",
     "test": "eslint test/",
     "predeploy": "yarn test",
-    "deploy": "yarn publish --minor --access public"
+    "deploy": "yarn publish --new-version $npm_package_version --tag latest --access public",
+    "poatdeploy": "git push --tags origin HEAD"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.45.0",

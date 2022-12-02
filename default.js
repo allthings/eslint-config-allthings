@@ -36,6 +36,7 @@ module.export = {
     ],
     'no-console': 'error',
     'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
     'sort-keys': 'error',
   },
 }

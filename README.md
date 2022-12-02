@@ -1,12 +1,13 @@
 # eslint-config-allthings
 
-## Usage
 
-Install
+## Setup
 
 ```shell
 yarn add -DE @allthings/eslint-config
 ```
+
+## Usage
 
 Add this to your .eslintrc.js
 
@@ -14,7 +15,7 @@ Add this to your .eslintrc.js
 
 ```js
 module.exports = {
-  extends: ['@allthings/react'],
+  extends: ['@allthings/eslint-config/react'],
 }
 ```
 
@@ -22,6 +23,14 @@ module.exports = {
 
 ```js
 module.exports = {
-  extends: ['@allthings/node'],
+  extends: ['@allthings/eslint-config/node'],
 }
+```
+
+## Development
+
+Publishing to npm
+
+```shell
+yarn deploy
 ```

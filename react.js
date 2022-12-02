@@ -3,8 +3,8 @@ module.export = {
     '@allthings/default',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
+    'plugin:react-hooks/recommended',
   ],
-  plugins: ['react-hooks'],
   rules: {
     'react-hooks/exhaustive-deps': 'error',
     'react/jsx-curly-brace-presence': [
