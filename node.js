@@ -1,3 +1,3 @@
 module.export = {
-  extends: ['@allthings/default'],
+  extends: ['@allthings/eslint-config/default'],
 }

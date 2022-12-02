@@ -1,6 +1,6 @@
 module.export = {
   extends: [
-    '@allthings/default',
+    '@allthings/eslint-config/default',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
