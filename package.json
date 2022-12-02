@@ -1,0 +1,52 @@
+{
+  "name": "@allthings/eslint-config",
+  "version": "0.0.1",
+  "private": true,
+  "description": "ESlint shareable config for Allthings style",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "default.js",
+    "node.js",
+    "react.js"
+  ],
+  "scripts": {
+    "lint": "prettier",
+    "test": "eslint test/",
+    "predeploy": "yarn test",
+    "deploy": "yarn publish --minor --access public"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.5.1",
+    "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "eslint-plugin-typescript-sort-keys": "^2.1.0"
+  },
+  "peerDependencies": {
+    "eslint": ">=8.28.0",
+    "prettier": ">=2.8.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.28.0",
+    "prettier": "2.8.0"
+  },
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "typescript"
+  ],
+  "prettier": {
+    "printWidth": 80,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "useTabs": false
+  },
+  "repository": "git@github.com:allthings/eslint-config-allthings.git",
+  "author": "Dmitry Markov <forall@stylive.com>",
+  "license": "MIT"
+}
