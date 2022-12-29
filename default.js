@@ -35,6 +35,7 @@ module.export = {
       },
     ],
     'no-console': 'error',
+    quotes: ['error', 'single', { avoidEscape: true }],
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
     'sort-keys': 'error',
