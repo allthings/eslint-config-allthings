@@ -1,5 +1,6 @@
 # eslint-config-allthings
 
+ESlint shareable config for Allthings style
 
 ## Setup
 
@@ -16,14 +17,6 @@ Add this to your .eslintrc.js
 ```js
 module.exports = {
   extends: ['@allthings/eslint-config'],
-}
-```
-
-### Node.js projects (TODO)
-
-```js
-module.exports = {
-  extends: ['@allthings/eslint-config/node'],
 }
 ```
 
