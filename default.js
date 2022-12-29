@@ -1,12 +1,12 @@
 module.export = {
   extends: [
-    'plugin:prettier/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:typescript-sort-keys/recommended',
+    'plugin:prettier/recommended',
   ],
   plugins: ['typescript-sort-keys', 'simple-import-sort'],
   rules: {
