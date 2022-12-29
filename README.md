@@ -15,11 +15,11 @@ Add this to your .eslintrc.js
 
 ```js
 module.exports = {
-  extends: ['@allthings/eslint-config/react'],
+  extends: ['@allthings/eslint-config'],
 }
 ```
 
-### Node.js projects
+### Node.js projects (TODO)
 
 ```js
 module.exports = {

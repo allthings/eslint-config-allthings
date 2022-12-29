@@ -1,6 +1,6 @@
 {
   "name": "@allthings/eslint-config",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "ESlint shareable config for Allthings style",
   "main": "index.js",
   "files": [
