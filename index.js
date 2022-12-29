@@ -160,4 +160,5 @@ module.exports = {
     browser: true,
     node: true,
   },
+  root: true,
 }
