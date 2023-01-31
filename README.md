@@ -20,6 +20,14 @@ module.exports = {
 }
 ```
 
+### Node.js projects
+
+```js
+module.exports = {
+  extends: ['@allthings/eslint-config/node'],
+}
+```
+
 ## Development
 
 Publishing to npm
