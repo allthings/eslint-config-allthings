@@ -15,9 +15,7 @@ const originalPaths = require.resolve.paths('eslint-plugin-import')
 // our resolve paths to first check the cwd and iterate to
 // eslint-config-next's dependencies if needed
 
-for (let i = originalPaths.length - 1; i >= 0; i--) {
-  const currentPath = originalPaths[i]
-
+for (const currentPath of originalPaths) {
   if (currentPath.replace(/\\/g, '/').startsWith(cwd)) {
     sortedPaths.push(currentPath)
   } else {
@@ -26,7 +24,7 @@ for (let i = originalPaths.length - 1; i >= 0; i--) {
 }
 
 // maintain order of node_modules outside cwd
-sortedPaths.push(...keptPaths)
+sortedPaths.push(...keptPaths.reverse())
 
 const hookPropertyMap = new Map(
   [
