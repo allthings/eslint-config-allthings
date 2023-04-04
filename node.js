@@ -29,7 +29,6 @@ sortedPaths.push(...keptPaths.reverse())
 const hookPropertyMap = new Map(
   [
     ['eslint-plugin-import', 'eslint-plugin-import'],
-    ['eslint-plugin-ternary', 'eslint-plugin-ternary'],
     [
       'eslint-plugin-typescript-sort-keys',
       'eslint-plugin-typescript-sort-keys',
@@ -59,7 +58,6 @@ module.exports = {
     'plugin:import/recommended',
     'plugin:import/typescript',
     'eslint:recommended',
-    'plugin:ternary/recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:typescript-sort-keys/recommended',
@@ -70,7 +68,6 @@ module.exports = {
     'typescript-sort-keys',
     'prefer-arrow',
     'simple-import-sort',
-    'ternary',
   ],
   rules: {
     '@typescript-eslint/adjacent-overload-signatures': 'error',
