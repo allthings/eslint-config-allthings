@@ -28,6 +28,7 @@ sortedPaths.push(...keptPaths.reverse())
 
 const hookPropertyMap = new Map(
   [
+    ['eslint-plugin-jest', 'eslint-plugin-jest'],
     ['eslint-plugin-import', 'eslint-plugin-import'],
     [
       'eslint-plugin-typescript-sort-keys',
@@ -64,6 +65,7 @@ module.exports = {
     'plugin:prettier/recommended',
   ],
   plugins: [
+    'jest',
     'import',
     'typescript-sort-keys',
     'prefer-arrow',
@@ -230,6 +232,10 @@ module.exports = {
         devDependencies: true,
       },
     ],
+    'jest/no-disabled-tests': 'warn',
+    'jest/no-focused-tests': 'error',
+    'jest/no-identical-title': 'error',
+    'jest/valid-expect': 'error',
     'max-classes-per-file': ['error', 1],
     'no-bitwise': 'error',
     'no-caller': 'error',
@@ -316,6 +322,30 @@ module.exports = {
   env: {
     node: true,
     es6: true,
+    'jest/globals': true,
   },
+  globals: {
+    describe: true,
+    expect: true,
+    fetch: false,
+    it: true,
+    jest: true,
+    MutationObserver: true,
+  },
+  overrides: [
+    {
+      // because of jest
+      files: ['*.test.ts'],
+      rules: {
+        '@typescript-eslint/explicit-function-return-type': [
+          'warn',
+          {
+            allowTypedFunctionExpressions: true,
+          },
+        ],
+        '@typescript-eslint/no-explicit-any': 'off',
+      },
+    },
+  ],
   root: true,
 }
