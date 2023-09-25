@@ -293,7 +293,15 @@ module.exports = {
     ],
     'unicorn/better-regex': 'off',
     'unicorn/expiring-todo-comments': 'off',
-    'unicorn/filename-case': 'warn',
+    'unicorn/filename-case': [
+      'warn',
+      {
+        cases: {
+          camelCase: true,
+          pascalCase: true,
+        },
+      },
+    ],
     'unicorn/import-style': 'warn',
     'unicorn/no-array-reduce': 'off',
     'unicorn/no-console-spaces': 'off',
