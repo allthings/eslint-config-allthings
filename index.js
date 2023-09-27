@@ -30,6 +30,7 @@ sortedPaths.push(...keptPaths)
 
 const hookPropertyMap = new Map(
   [
+    ['eslint-plugin-unicorn', 'eslint-plugin-unicorn'],
     ['eslint-plugin-jest', 'eslint-plugin-jest'],
     ['eslint-plugin-import', 'eslint-plugin-import'],
     ['eslint-plugin-react', 'eslint-plugin-react'],
@@ -61,6 +62,7 @@ require('@rushstack/eslint-patch/modern-module-resolution')
 
 module.exports = {
   extends: [
+    'plugin:unicorn/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
     'eslint:recommended',
@@ -73,6 +75,7 @@ module.exports = {
     'plugin:prettier/recommended',
   ],
   plugins: [
+    'unicorn',
     'jest',
     'import',
     'react',
@@ -313,6 +316,43 @@ module.exports = {
         markers: ['/'],
       },
     ],
+    'unicorn/better-regex': 'off',
+    'unicorn/expiring-todo-comments': 'off',
+    'unicorn/filename-case': [
+      'warn',
+      {
+        cases: {
+          camelCase: true,
+          pascalCase: true,
+        },
+      },
+    ],
+    'unicorn/import-style': 'warn',
+    'unicorn/no-array-reduce': 'off',
+    'unicorn/no-console-spaces': 'off',
+    'unicorn/no-document-cookie': 'warn',
+    'unicorn/no-empty-file': 'off',
+    'unicorn/no-hex-escape': 'warn',
+    'unicorn/no-invalid-remove-event-listener': 'warn',
+    'unicorn/no-nested-ternary': 'off',
+    'unicorn/no-object-as-default-parameter': 'warn',
+    'unicorn/no-unreadable-array-destructuring': 'off',
+    'unicorn/no-unsafe-regex': 'off',
+    'unicorn/no-unused-properties': 'warn',
+    'unicorn/no-zero-fractions': 'off',
+    'unicorn/prefer-export-from': 'off',
+    'unicorn/prefer-includes': 'off',
+    'unicorn/prefer-module': 'warn',
+    'unicorn/prefer-optional-catch-binding': 'off',
+    'unicorn/prefer-prototype-methods': 'off',
+    'unicorn/prefer-query-selector': 'off',
+    'unicorn/prefer-regexp-test': 'off',
+    'unicorn/prefer-set-has': 'off',
+    'unicorn/prefer-set-size': 'off',
+    'unicorn/prefer-string-replace-all': 'off',
+    'unicorn/relative-url-style': 'off',
+    'unicorn/switch-case-braces': 'off',
+    'unicorn/template-indent': 'off',
     'use-isnan': 'error',
   },
   parser: '@typescript-eslint/parser',
