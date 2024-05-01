@@ -10,7 +10,7 @@ yarn add -DE @allthings/eslint-config
 
 ## Usage
 
-Add this to your .eslintrc.js
+Add this to your eslint.config.js
 
 ### React projects
 
