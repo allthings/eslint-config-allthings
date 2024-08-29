@@ -346,6 +346,16 @@ module.exports = {
     'unicorn/no-unsafe-regex': 'off',
     'unicorn/no-unused-properties': 'warn',
     'unicorn/no-zero-fractions': 'off',
+    'unicorn/prevent-abbreviations': [
+      'error',
+      {
+        replacements: {
+          props: {
+            properties: false,
+          },
+        },
+      },
+    ],
     'unicorn/prefer-export-from': 'off',
     'unicorn/prefer-includes': 'off',
     'unicorn/prefer-module': 'warn',
