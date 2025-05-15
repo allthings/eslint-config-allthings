@@ -146,6 +146,8 @@ module.exports = {
     '@typescript-eslint/no-inferrable-types': 'error',
     '@typescript-eslint/no-misused-new': 'error',
     '@typescript-eslint/no-namespace': 'error',
+    '@typescript-eslint/no-redundant-type-constituents': 'warn',
+    '@typescript-eslint/no-require-imports': 'warn',
     '@typescript-eslint/no-shadow': [
       'error',
       {
@@ -153,6 +155,11 @@ module.exports = {
       },
     ],
     '@typescript-eslint/no-this-alias': 'error',
+    '@typescript-eslint/no-unsafe-argument': 'warn',
+    '@typescript-eslint/no-unsafe-assignment': 'warn',
+    '@typescript-eslint/no-unsafe-call': 'warn',
+    '@typescript-eslint/no-unsafe-member-access': 'warn',
+    '@typescript-eslint/no-unsafe-return': 'warn',
     '@typescript-eslint/no-unused-expressions': 'error',
     '@typescript-eslint/no-unused-vars': [
       'error',
@@ -163,7 +170,8 @@ module.exports = {
     '@typescript-eslint/prefer-for-of': 'error',
     '@typescript-eslint/prefer-function-type': 'error',
     '@typescript-eslint/prefer-namespace-keyword': 'error',
-    '@typescript-eslint/prefer-nullish-coalescing': 'warn',
+    '@typescript-eslint/prefer-nullish-coalescing': 'off',
+    '@typescript-eslint/prefer-promise-reject-errors': 'warn',
     '@typescript-eslint/triple-slash-reference': [
       'error',
       {
@@ -311,6 +319,7 @@ module.exports = {
     'unicorn/no-invalid-remove-event-listener': 'warn',
     'unicorn/no-nested-ternary': 'off',
     'unicorn/no-object-as-default-parameter': 'warn',
+    'unicorn/no-single-promise-in-promise-methods': 'warn',
     'unicorn/no-unreadable-array-destructuring': 'off',
     'unicorn/no-unsafe-regex': 'off',
     'unicorn/no-unused-properties': 'warn',
@@ -397,6 +406,7 @@ module.exports = {
       rules: {
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
+        '@typescript-eslint/no-misused-promises': 'off',
       },
     },
   ],
