@@ -1,9 +1,5 @@
 /* eslint-disable
-  unicorn/prefer-module,
   @typescript-eslint/no-var-requires,
-  @typescript-eslint/no-unsafe-assignment,
-  @typescript-eslint/no-require-imports,
-  @typescript-eslint/no-unsafe-call
  */
 const config = require('../index')
 config.parserOptions = {
