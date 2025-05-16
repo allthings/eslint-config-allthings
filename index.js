@@ -42,6 +42,7 @@ const hookPropertyMap = new Map(
     ],
     ['eslint-plugin-prefer-arrow', 'eslint-plugin-prefer-arrow'],
     ['eslint-plugin-simple-import-sort', 'eslint-plugin-simple-import-sort'],
+    ['@stylistic/eslint-plugin', '@stylistic/eslint-plugin'],
   ].map(([request, replacement]) => [
     request,
     require.resolve(replacement, { paths: sortedPaths }),
@@ -66,15 +67,16 @@ module.exports = {
     'plugin:import/recommended',
     'plugin:import/typescript',
     'eslint:recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-type-checked',
+    'plugin:@typescript-eslint/stylistic-type-checked',
     'plugin:typescript-sort-keys/recommended',
     'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
+    'plugin:react-hooks/recommended-legacy',
     'plugin:react/jsx-runtime',
     'plugin:prettier/recommended',
   ],
   plugins: [
+    '@stylistic',
     'unicorn',
     'jest',
     'import',
@@ -86,60 +88,7 @@ module.exports = {
     'simple-import-sort',
   ],
   rules: {
-    '@typescript-eslint/adjacent-overload-signatures': 'error',
-    '@typescript-eslint/array-type': [
-      'error',
-      {
-        default: 'array',
-      },
-    ],
-    '@typescript-eslint/ban-types': [
-      'error',
-      {
-        types: {
-          Object: {
-            message: 'Avoid using the `Object` type. Did you mean `object`?',
-          },
-          Function: {
-            message:
-              'Avoid using the `Function` type. Prefer a specific function type, like `() => void`.',
-          },
-          Boolean: {
-            message: 'Avoid using the `Boolean` type. Did you mean `boolean`?',
-          },
-          Number: {
-            message: 'Avoid using the `Number` type. Did you mean `number`?',
-          },
-          String: {
-            message: 'Avoid using the `String` type. Did you mean `string`?',
-          },
-          Symbol: {
-            message: 'Avoid using the `Symbol` type. Did you mean `symbol`?',
-          },
-        },
-      },
-    ],
-    '@typescript-eslint/consistent-type-assertions': 'error',
-    '@typescript-eslint/explicit-function-return-type': [
-      'warn', // TODO: strict later
-      {
-        allowExpressions: false,
-        allowTypedFunctionExpressions: false,
-        allowHigherOrderFunctions: false,
-        allowDirectConstAssertionInArrowFunctions: true,
-        allowConciseArrowFunctionExpressionsStartingWithVoid: true,
-      },
-    ],
-    '@typescript-eslint/explicit-module-boundary-types': [
-      'warn', // TODO: strict later
-      {
-        allowArgumentsExplicitlyTypedAsAny: true,
-        allowDirectConstAssertionInArrowFunctions: true,
-        allowHigherOrderFunctions: false,
-        allowTypedFunctionExpressions: false,
-      },
-    ],
-    '@typescript-eslint/member-delimiter-style': [
+    '@stylistic/member-delimiter-style': [
       'error',
       {
         multiline: {
@@ -150,6 +99,33 @@ module.exports = {
           delimiter: 'semi',
           requireLast: false,
         },
+      },
+    ],
+    '@stylistic/quotes': [
+      'error',
+      'single',
+      {
+        avoidEscape: true,
+      },
+    ],
+    '@stylistic/semi': ['error', 'never'],
+    '@stylistic/type-annotation-spacing': 'error',
+    '@typescript-eslint/adjacent-overload-signatures': 'error',
+    '@typescript-eslint/array-type': [
+      'error',
+      {
+        default: 'array',
+      },
+    ],
+    '@typescript-eslint/consistent-type-assertions': 'error',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': [
+      'warn', // TODO: strict later
+      {
+        allowArgumentsExplicitlyTypedAsAny: true,
+        allowDirectConstAssertionInArrowFunctions: true,
+        allowHigherOrderFunctions: false,
+        allowTypedFunctionExpressions: false,
       },
     ],
     '@typescript-eslint/naming-convention': [
@@ -170,6 +146,8 @@ module.exports = {
     '@typescript-eslint/no-inferrable-types': 'error',
     '@typescript-eslint/no-misused-new': 'error',
     '@typescript-eslint/no-namespace': 'error',
+    '@typescript-eslint/no-redundant-type-constituents': 'warn',
+    '@typescript-eslint/no-require-imports': 'warn',
     '@typescript-eslint/no-shadow': [
       'error',
       {
@@ -177,6 +155,11 @@ module.exports = {
       },
     ],
     '@typescript-eslint/no-this-alias': 'error',
+    '@typescript-eslint/no-unsafe-argument': 'warn',
+    '@typescript-eslint/no-unsafe-assignment': 'warn',
+    '@typescript-eslint/no-unsafe-call': 'warn',
+    '@typescript-eslint/no-unsafe-member-access': 'warn',
+    '@typescript-eslint/no-unsafe-return': 'warn',
     '@typescript-eslint/no-unused-expressions': 'error',
     '@typescript-eslint/no-unused-vars': [
       'error',
@@ -187,14 +170,8 @@ module.exports = {
     '@typescript-eslint/prefer-for-of': 'error',
     '@typescript-eslint/prefer-function-type': 'error',
     '@typescript-eslint/prefer-namespace-keyword': 'error',
-    '@typescript-eslint/quotes': [
-      'error',
-      'single',
-      {
-        avoidEscape: true,
-      },
-    ],
-    '@typescript-eslint/semi': ['error', 'never'],
+    '@typescript-eslint/prefer-nullish-coalescing': 'off',
+    '@typescript-eslint/prefer-promise-reject-errors': 'warn',
     '@typescript-eslint/triple-slash-reference': [
       'error',
       {
@@ -203,7 +180,6 @@ module.exports = {
         lib: 'always',
       },
     ],
-    '@typescript-eslint/type-annotation-spacing': 'error',
     '@typescript-eslint/typedef': 'error',
     '@typescript-eslint/unified-signatures': 'error',
     'arrow-body-style': ['error', 'as-needed'],
@@ -334,6 +310,7 @@ module.exports = {
       },
     ],
     'unicorn/import-style': 'warn',
+    'unicorn/no-anonymous-default-export': 'off',
     'unicorn/no-array-reduce': 'off',
     'unicorn/no-console-spaces': 'off',
     'unicorn/no-document-cookie': 'warn',
@@ -342,6 +319,7 @@ module.exports = {
     'unicorn/no-invalid-remove-event-listener': 'warn',
     'unicorn/no-nested-ternary': 'off',
     'unicorn/no-object-as-default-parameter': 'warn',
+    'unicorn/no-single-promise-in-promise-methods': 'warn',
     'unicorn/no-unreadable-array-destructuring': 'off',
     'unicorn/no-unsafe-regex': 'off',
     'unicorn/no-unused-properties': 'warn',
@@ -357,7 +335,9 @@ module.exports = {
       },
     ],
     'unicorn/prefer-export-from': 'off',
+    'unicorn/prefer-global-this': 'warn',
     'unicorn/prefer-includes': 'off',
+    'unicorn/prefer-math-min-max': 'warn',
     'unicorn/prefer-module': 'warn',
     'unicorn/prefer-optional-catch-binding': 'off',
     'unicorn/prefer-prototype-methods': 'off',
@@ -365,7 +345,9 @@ module.exports = {
     'unicorn/prefer-regexp-test': 'off',
     'unicorn/prefer-set-has': 'off',
     'unicorn/prefer-set-size': 'off',
+    'unicorn/prefer-string-raw': 'off',
     'unicorn/prefer-string-replace-all': 'off',
+    'unicorn/prefer-structured-clone': 'warn',
     'unicorn/prefer-node-protocol': 'off',
     'unicorn/relative-url-style': 'off',
     'unicorn/switch-case-braces': 'off',
@@ -422,13 +404,9 @@ module.exports = {
       // because of jest
       files: ['*.test.ts'],
       rules: {
-        '@typescript-eslint/explicit-function-return-type': [
-          'warn',
-          {
-            allowTypedFunctionExpressions: true,
-          },
-        ],
+        '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
+        '@typescript-eslint/no-misused-promises': 'off',
       },
     },
   ],

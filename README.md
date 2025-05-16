@@ -44,3 +44,5 @@ Run `yarn link @allthings/eslint-config` in the project that you want to test it
 
 After you finish run in your project `yarn unlink @allthings/eslint-config` and then `yarn install --force`
 to restore the initial state of dependencies
+
+Or you could release a dev npm version with `yarn deploy:dev`. Remember to update the version in package.json
