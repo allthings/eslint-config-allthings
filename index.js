@@ -118,6 +118,7 @@ module.exports = {
       },
     ],
     '@typescript-eslint/consistent-type-assertions': 'error',
+    '@typescript-eslint/consistent-type-definitions': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': [
       'warn', // TODO: strict later
@@ -158,7 +159,7 @@ module.exports = {
     '@typescript-eslint/no-unsafe-argument': 'warn',
     '@typescript-eslint/no-unsafe-assignment': 'warn',
     '@typescript-eslint/no-unsafe-call': 'warn',
-    '@typescript-eslint/no-unsafe-member-access': 'warn',
+    '@typescript-eslint/no-unsafe-member-access': 'off',
     '@typescript-eslint/no-unsafe-return': 'warn',
     '@typescript-eslint/no-unused-expressions': 'error',
     '@typescript-eslint/no-unused-vars': [
@@ -327,6 +328,9 @@ module.exports = {
     'unicorn/prevent-abbreviations': [
       'error',
       {
+        allowList: {
+          props: true,
+        },
         replacements: {
           props: {
             properties: false,
