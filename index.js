@@ -117,7 +117,6 @@ module.exports = {
         default: 'array',
       },
     ],
-    '@typescript-eslint/no-base-to-string': 'warn',
     '@typescript-eslint/consistent-type-assertions': 'error',
     '@typescript-eslint/consistent-type-definitions': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
@@ -141,9 +140,13 @@ module.exports = {
         selector: 'interface',
       },
     ],
-    '@typescript-eslint/no-empty-function': 'error',
+    '@typescript-eslint/no-base-to-string': 'warn',
+    // need for tests' mockups
+    '@typescript-eslint/no-empty-function': 'warn',
     '@typescript-eslint/no-empty-interface': 'error',
     '@typescript-eslint/no-explicit-any': 'warn',
+    // turn on later
+    '@typescript-eslint/no-floating-promises': 'warn',
     '@typescript-eslint/no-for-in-array': 'error',
     '@typescript-eslint/no-inferrable-types': 'error',
     '@typescript-eslint/no-misused-new': 'error',
@@ -317,12 +320,15 @@ module.exports = {
     'unicorn/import-style': 'warn',
     'unicorn/no-anonymous-default-export': 'off',
     'unicorn/no-array-reduce': 'off',
+    'unicorn/no-await-expression-member': 'warn',
     'unicorn/no-console-spaces': 'off',
     'unicorn/no-document-cookie': 'warn',
     'unicorn/no-empty-file': 'off',
     'unicorn/no-hex-escape': 'warn',
     'unicorn/no-invalid-remove-event-listener': 'warn',
     'unicorn/no-nested-ternary': 'off',
+    // because we have a lot of logic depends on null
+    'unicorn/no-null': 'warn',
     'unicorn/no-object-as-default-parameter': 'warn',
     'unicorn/no-single-promise-in-promise-methods': 'warn',
     'unicorn/no-unreadable-array-destructuring': 'off',
@@ -333,9 +339,13 @@ module.exports = {
       'error',
       {
         allowList: {
+          params: true,
           props: true,
         },
         replacements: {
+          params: {
+            properties: false,
+          },
           props: {
             properties: false,
           },
@@ -413,8 +423,14 @@ module.exports = {
       files: ['*.test.ts'],
       rules: {
         '@typescript-eslint/explicit-function-return-type': 'off',
+        '@typescript-eslint/no-empty-function': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/no-misused-promises': 'off',
+        '@typescript-eslint/no-unsafe-return': 'off',
+        '@typescript-eslint/no-unsafe-assignment': 'off',
+        '@typescript-eslint/require-await': 'off',
+        'unicorn/no-array-callback-reference': 'off',
+        'unicorn/no-await-expression-member': 'off',
       },
     },
   ],
