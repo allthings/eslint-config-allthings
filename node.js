@@ -275,6 +275,7 @@ module.exports = {
       },
     ],
     'unicorn/better-regex': 'off',
+    'unicorn/consistent-existence-index-check': 'off',
     'unicorn/expiring-todo-comments': 'off',
     'unicorn/filename-case': [
       'warn',
